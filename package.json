@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"remote-dev":"vite dev --config remote-dev.vite.config.ts",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",

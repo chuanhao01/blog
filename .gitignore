@@ -1,3 +1,6 @@
+.vscode/settings.json
+
+# Sveltekit generated
 .DS_Store
 node_modules
 /build
