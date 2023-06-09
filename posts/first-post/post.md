@@ -1,7 +1,8 @@
 ---
 title: First post
 description: First post.
-date: '2023-4-14'
+dateTime: '2023-4-14T08:00:00'
+utc: 8
 categories:
   - sveltekit
   - svelte
