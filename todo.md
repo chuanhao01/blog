@@ -22,3 +22,8 @@ The page path:
   - Also include a local time in brackets besides if different
 - Find a way to render markdown
 - Find a way to include custom componenets
+
+- Optional frontmatter also?
+  - Not sure how to get the structure in TS and into the code
+  - Can probably set hard code in a ts file
+  - Will fill in default values for missing props
