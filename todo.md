@@ -32,4 +32,3 @@ The page path:
 
 ## MDSvex types
 Find a way to get proper typing for the module import of `.mdx`/`.md`/`.
-
