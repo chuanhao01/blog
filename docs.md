@@ -19,7 +19,16 @@ Just that the import also helps to parse the metadata found in the frontmatter i
 I.e. the final objects looks like this:
 ```ts
 {
-  default: a, // component import
+  default: ComponentType/SvelteComponentDev, // component import (for it to work well and type well)
+  // Based on https://github.com/sveltejs/language-tools/issues/486
   metadata: {} //Some metadata parsed from the frontmatter
 }
 ```
+
+## Bugs
+### Not being able to import from outside /src
+IDK, I can't seem to track it down or find anybody else having a problem with it
+Seems like you cannot really import files from outside `/src` without it acting weird
+
+Could be something to do with `vite.allow-fs` since its asking me that
+But looking like a svelte problem as there was an error `/posts/post/... not found`.
