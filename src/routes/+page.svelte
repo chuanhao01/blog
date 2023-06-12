@@ -7,9 +7,7 @@
 	{#each data.posts as post}
 		<li>
 			<a href="/post/{post.slug}">
-				<p>{post.title}</p>
-				<p>{post.description}</p>
-
+				<p>Title:{post.title}, Descriptions:{post.description}</p>
 			</a>
 		</li>
 	{/each}
