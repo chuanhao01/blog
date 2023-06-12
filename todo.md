@@ -27,3 +27,9 @@ The page path:
   - Not sure how to get the structure in TS and into the code
   - Can probably set hard code in a ts file
   - Will fill in default values for missing props
+
+# Bugs
+
+## MDSvex types
+Find a way to get proper typing for the module import of `.mdx`/`.md`/`.
+
