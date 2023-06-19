@@ -1,20 +1,26 @@
 import { json } from '@sveltejs/kit';
-import type { Post } from '$lib/types';
+import type { PostFile } from '$lib/types';
+import { statSync } from 'fs';
+import { slugify } from '$lib/utils';
 
 async function getPosts() {
-	let posts: Post[] = [];
+	let posts = [];
 
 	const paths = import.meta.glob('/src/posts/**/post.svx', { eager: true });
 
 	for (const path in paths) {
-		const file = paths[path];
-		const slug = path.split('/').at(-2);
-
-		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata as Omit<Post, 'slug'>;
-			const post = { ...metadata, slug } satisfies Post;
-			post.published && posts.push(post);
+		const file = paths[path] as PostFile;
+		// TODO: Simplify stats down to the ones I want
+		const stats = statSync(`./${path}`);
+		const postFolder = path.split('/').at(-2);
+		if (!postFolder) {
+			throw Error(`PostFolder is not a string, path:${path}`);
 		}
+
+		const slug = slugify(postFolder);
+		const metadata = file.metadata;
+		const post = { ...metadata, slug, stats };
+		post.published && posts.push(post);
 	}
 
 	posts = posts.sort(

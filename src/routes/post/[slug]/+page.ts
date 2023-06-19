@@ -1,11 +1,10 @@
 import { error } from '@sveltejs/kit';
-import type { Post } from '$lib/types';
-import type { ComponentType } from 'svelte';
+import type { PostFile } from '$lib/types';
 
 export async function load({ params: { slug } }) {
 	try {
-		const post = await import(`../../../posts/${slug}/post.svx`);
-		const data: { metadata: Omit<Post, 'slug'>; component: ComponentType } = {
+		const post: PostFile = await import(`../../../posts/${slug}/post.svx`);
+		const data = {
 			metadata: post.metadata,
 			component: post.default
 		};
