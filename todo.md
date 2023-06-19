@@ -10,23 +10,43 @@ The page path:
 - /api/post
   - Just an API endpoint to call stuff
 
-# Planning
-- Need a way to search through the posts
-- Need a way to query for specific posts
-  - If I am linking to previus post I have written before
-- Infinite scrolling
-- Pagination on the api
-- Add in proper datetime (luxon lib)
-  - UTC included in the markdown metadata
-    - Should be used to base all of the "post" time
-  - Also include a local time in brackets besides if different
-- Find a way to render markdown
-- Find a way to include custom componenets
+# Proper Planning
 
-- Optional frontmatter also?
-  - Not sure how to get the structure in TS and into the code
-  - Can probably set hard code in a ts file
-  - Will fill in default values for missing props
+## Basic Features
+- Datetime Feature
+- Simple Preview of post
+  - Title, Description, Published time, Last Edited time, Categories, Author
+  - Preview of the post content
+- Simple view of post markdown
+  - Just some CSS
+  - Leave to advanced feature
+- Infinite Scrolling of the posts
+- Proper Datetime Handling (through luxon)
+  - All data should be in UTC format
+  - Only when viewing on the posts etc, should it show timezone and what their local time is
+
+## Advanced Features
+- Better Design
+- Mobile View
+- Markdown plugins
+  - Table of contents
+  - Estimated time to read
+  - Better code viewer/editor
+
+Needs to be further Tested
+- Pagination
+- Filter, Sort and Search (Client or Server Side)
+  - Include/Exclude categories
+  - Published Time
+  - Last Edited Times
+  - Search in Title, Description and Header(Preview of the entire article)
+- Optional Frontmatter
+  - Not sure what I would use that for
+- Like and Comment system
+- More sorting options
+  - Sort by likes and post views
+- SEO
+- Could possibly integrate chatgpt into the blog's articles content
 
 # Features
 - 3 different modes for a blog post
