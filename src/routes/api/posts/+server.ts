@@ -20,7 +20,9 @@ async function getPosts() {
 		const slug = slugify(postFolder);
 		const metadata = file.metadata;
 		const post = { ...metadata, slug, stats };
-		post.published && posts.push(post);
+		if (post.state === 'published') {
+			posts.push(post);
+		}
 	}
 
 	posts = posts.sort(

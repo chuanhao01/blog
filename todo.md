@@ -28,6 +28,12 @@ The page path:
   - Can probably set hard code in a ts file
   - Will fill in default values for missing props
 
+# Features
+- 3 different modes for a blog post
+  - Hidden
+  - Draft
+  - Published
+
 # Bugs
 
 ## MDSvex types

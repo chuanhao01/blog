@@ -5,7 +5,7 @@ export interface PostMetadata {
 	description: string;
 	date: string;
 	categories: string[];
-	published: boolean;
+	state: 'published' | 'draft' | 'hidden';
 }
 
 export type SVXFile = {

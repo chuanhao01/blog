@@ -6,7 +6,7 @@ utc: 8
 categories:
   - sveltekit
   - svelte
-published: true
+state: published
 ---
 
 <script>
